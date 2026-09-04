@@ -25,729 +25,2686 @@
     }
 
     *{box-sizing:border-box}
-    html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+
+    html,body{
+      margin:0;
+      min-height:100%;
+      background:var(--bg);
+      color:var(--text);
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,
+      "Segoe UI",Roboto,Arial,sans-serif;
+    }
+
     body{
       min-height:100vh;
       background:
-        radial-gradient(circle at 10% -10%, rgba(54,211,153,.13), transparent 34%),
-        radial-gradient(circle at 100% 0%, rgba(66,133,244,.10), transparent 28%),
+        radial-gradient(circle at 10% -10%,rgba(54,211,153,.13),transparent 34%),
+        radial-gradient(circle at 100% 0%,rgba(66,133,244,.10),transparent 28%),
         var(--bg);
     }
 
     button,input{font:inherit}
     button{cursor:pointer}
 
-    .app{width:min(980px,100%);margin:0 auto;padding:18px 16px 42px}
-    .topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{
-      width:46px;height:46px;border-radius:15px;display:grid;place-items:center;
-      background:linear-gradient(145deg,var(--accent),#1a8e68);color:#04130e;
-      font-size:23px;font-weight:900;box-shadow:0 12px 30px rgba(54,211,153,.18)
+    .app{
+      width:min(980px,100%);
+      margin:0 auto;
+      padding:18px 16px 42px;
     }
-    .brand h1{margin:0;font-size:21px;letter-spacing:-.4px}
-    .brand p{margin:3px 0 0;color:var(--muted);font-size:13px}
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom:18px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .logo{
+      width:46px;
+      height:46px;
+      border-radius:15px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(145deg,var(--accent),#1a8e68);
+      color:#04130e;
+      font-size:23px;
+      font-weight:900;
+      box-shadow:0 12px 30px rgba(54,211,153,.18);
+    }
+
+    .brand h1{
+      margin:0;
+      font-size:21px;
+      letter-spacing:-.4px;
+    }
+
+    .brand p{
+      margin:3px 0 0;
+      color:var(--muted);
+      font-size:13px;
+    }
 
     .sync-btn{
-      border:1px solid var(--line);background:rgba(13,24,40,.82);color:var(--text);
-      border-radius:13px;padding:10px 13px;font-weight:700;display:flex;align-items:center;gap:8px
+      border:1px solid var(--line);
+      background:rgba(13,24,40,.82);
+      color:var(--text);
+      border-radius:13px;
+      padding:10px 13px;
+      font-weight:700;
+      display:flex;
+      align-items:center;
+      gap:8px;
     }
-    .sync-btn:disabled{opacity:.55;cursor:not-allowed}
+
+    .sync-btn:disabled{
+      opacity:.55;
+      cursor:not-allowed;
+    }
 
     .status-card{
-      display:grid;grid-template-columns:1.3fr .7fr;gap:16px;background:rgba(13,24,40,.88);
-      border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow);margin-bottom:16px
+      display:grid;
+      grid-template-columns:1.3fr .7fr;
+      gap:16px;
+      background:rgba(13,24,40,.88);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:16px 18px;
+      box-shadow:var(--shadow);
+      margin-bottom:16px;
     }
-    .status-main{display:flex;align-items:center;gap:12px;min-width:0}
-    .dot{width:12px;height:12px;border-radius:50%;background:var(--warning);box-shadow:0 0 0 6px rgba(255,202,102,.08);flex:0 0 auto}
-    .dot.ready{background:var(--accent);box-shadow:0 0 0 6px rgba(54,211,153,.08)}
-    .dot.error{background:var(--danger);box-shadow:0 0 0 6px rgba(255,101,119,.08)}
-    .status-title{font-weight:800}
-    .status-sub{color:var(--muted);font-size:13px;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .status-count{text-align:right;align-self:center}
-    .status-count strong{display:block;font-size:22px;letter-spacing:-.5px}
-    .status-count span{color:var(--muted);font-size:12px}
 
-    .grid{display:grid;grid-template-columns:1fr .95fr;gap:16px}
-    .card{background:rgba(13,24,40,.90);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
-    .card-head{padding:17px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px}
-    .card-head h2{margin:0;font-size:16px}
-    .card-head span{color:var(--muted);font-size:12px}
+    .status-main{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+
+    .dot{
+      width:12px;
+      height:12px;
+      border-radius:50%;
+      background:var(--warning);
+      box-shadow:0 0 0 6px rgba(255,202,102,.08);
+      flex:0 0 auto;
+    }
+
+    .dot.ready{
+      background:var(--accent);
+      box-shadow:0 0 0 6px rgba(54,211,153,.08);
+    }
+
+    .dot.error{
+      background:var(--danger);
+      box-shadow:0 0 0 6px rgba(255,101,119,.08);
+    }
+
+    .status-title{font-weight:800}
+
+    .status-sub{
+      color:var(--muted);
+      font-size:13px;
+      margin-top:3px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .status-count{
+      text-align:right;
+      align-self:center;
+    }
+
+    .status-count strong{
+      display:block;
+      font-size:22px;
+      letter-spacing:-.5px;
+    }
+
+    .status-count span{
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr .95fr;
+      gap:16px;
+    }
+
+    .card{
+      background:rgba(13,24,40,.90);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .card-head{
+      padding:17px 18px;
+      border-bottom:1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+
+    .card-head h2{
+      margin:0;
+      font-size:16px;
+    }
+
+    .card-head span{
+      color:var(--muted);
+      font-size:12px;
+    }
 
     .scanner-wrap{padding:15px}
+
     #reader{
-      overflow:hidden;border-radius:16px;background:#050a11;min-height:270px;border:1px dashed #2c405b
+      overflow:hidden;
+      border-radius:16px;
+      background:#050a11;
+      min-height:270px;
+      border:1px dashed #2c405b;
     }
-    #reader video{border-radius:14px!important}
-    #reader__dashboard_section_csr span, #reader__dashboard_section_csr select{color:#111}
-    #reader__scan_region{min-height:250px!important}
-    #reader img[alt="Info icon"]{display:none!important}
+
+    #reader video{
+      border-radius:14px!important;
+    }
+
+    #reader__dashboard_section_csr span,
+    #reader__dashboard_section_csr select{
+      color:#111;
+    }
+
+    #reader__scan_region{
+      min-height:250px!important;
+    }
+
+    #reader img[alt="Info icon"]{
+      display:none!important;
+    }
 
     .scanner-empty{
-      min-height:268px;display:flex;flex-direction:column;align-items:center;justify-content:center;
-      text-align:center;padding:28px;color:var(--muted)
+      min-height:268px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:28px;
+      color:var(--muted);
     }
-    .scanner-empty .icon{font-size:34px;margin-bottom:10px}
-    .scanner-empty strong{color:var(--text);font-size:16px;margin-bottom:5px}
 
-    .controls{display:flex;gap:10px;margin-top:12px}
+    .scanner-empty .icon{
+      font-size:34px;
+      margin-bottom:10px;
+    }
+
+    .scanner-empty strong{
+      color:var(--text);
+      font-size:16px;
+      margin-bottom:5px;
+    }
+
+    .controls{
+      display:flex;
+      gap:10px;
+      margin-top:12px;
+    }
+
     .btn{
-      border:0;border-radius:14px;padding:13px 15px;font-weight:850;flex:1;
-      transition:transform .12s ease,opacity .12s ease
+      border:0;
+      border-radius:14px;
+      padding:13px 15px;
+      font-weight:850;
+      flex:1;
+      transition:transform .12s ease,opacity .12s ease;
     }
-    .btn:active{transform:scale(.985)}
-    .btn-primary{background:var(--accent);color:#042117}
-    .btn-primary:hover{background:var(--accent2)}
-    .btn-secondary{background:var(--panel2);border:1px solid var(--line);color:var(--text)}
-    .btn:disabled{opacity:.5;cursor:not-allowed}
 
-    .manual{display:flex;gap:10px;margin-top:12px}
+    .btn:active{
+      transform:scale(.985);
+    }
+
+    .btn-primary{
+      background:var(--accent);
+      color:#042117;
+    }
+
+    .btn-primary:hover{
+      background:var(--accent2);
+    }
+
+    .btn-secondary{
+      background:var(--panel2);
+      border:1px solid var(--line);
+      color:var(--text);
+    }
+
+    .btn:disabled{
+      opacity:.5;
+      cursor:not-allowed;
+    }
+
+    .manual{
+      display:flex;
+      gap:10px;
+      margin-top:12px;
+    }
+
     .manual input{
-      min-width:0;flex:1;background:#081321;border:1px solid var(--line);color:var(--text);
-      border-radius:14px;padding:13px 14px;outline:none;font-size:16px
-    }
-    .manual input:focus{border-color:#3a846b;box-shadow:0 0 0 3px rgba(54,211,153,.08)}
-    .manual button{
-      border:0;background:var(--panel2);color:var(--text);border-radius:14px;padding:0 16px;font-weight:800;border:1px solid var(--line)
+      min-width:0;
+      flex:1;
+      background:#081321;
+      border:1px solid var(--line);
+      color:var(--text);
+      border-radius:14px;
+      padding:13px 14px;
+      outline:none;
+      font-size:16px;
     }
 
-    .result-area{padding:16px}
-    .result-placeholder{
-      min-height:315px;display:flex;flex-direction:column;align-items:center;justify-content:center;
-      text-align:center;color:var(--muted);padding:28px
+    .manual input:focus{
+      border-color:#3a846b;
+      box-shadow:0 0 0 3px rgba(54,211,153,.08);
     }
-    .result-placeholder .big{font-size:38px;margin-bottom:10px}
-    .result-placeholder strong{color:var(--text);font-size:17px;margin-bottom:5px}
+
+    .manual button{
+      border:0;
+      background:var(--panel2);
+      color:var(--text);
+      border-radius:14px;
+      padding:0 16px;
+      font-weight:800;
+      border:1px solid var(--line);
+    }
+
+    .result-area{
+      padding:16px;
+    }
+
+    .result-placeholder{
+      min-height:315px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:var(--muted);
+      padding:28px;
+    }
+
+    .result-placeholder .big{
+      font-size:38px;
+      margin-bottom:10px;
+    }
+
+    .result-placeholder strong{
+      color:var(--text);
+      font-size:17px;
+      margin-bottom:5px;
+    }
 
     .result{display:none}
-    .result.show{display:block;animation:pop .16s ease-out}
-    @keyframes pop{from{opacity:.4;transform:scale(.985)}to{opacity:1;transform:scale(1)}}
 
-    .price-label{font-size:12px;color:var(--muted);font-weight:750;text-transform:uppercase;letter-spacing:.8px}
-    .price{font-size:52px;font-weight:950;letter-spacing:-2px;line-height:1.05;margin:7px 0 17px}
-    .price.missing{font-size:31px;color:var(--warning);letter-spacing:-.8px}
-    .result-bad .price{font-size:28px;color:var(--danger);letter-spacing:-.6px}
+    .result.show{
+      display:block;
+      animation:pop .16s ease-out;
+    }
+
+    @keyframes pop{
+      from{
+        opacity:.4;
+        transform:scale(.985);
+      }
+      to{
+        opacity:1;
+        transform:scale(1);
+      }
+    }
+
+    .price-label{
+      font-size:12px;
+      color:var(--muted);
+      font-weight:750;
+      text-transform:uppercase;
+      letter-spacing:.8px;
+    }
+
+    .price{
+      font-size:52px;
+      font-weight:950;
+      letter-spacing:-2px;
+      line-height:1.05;
+      margin:7px 0 17px;
+    }
+
+    .price.missing{
+      font-size:31px;
+      color:var(--warning);
+      letter-spacing:-.8px;
+    }
+
+    .result-bad .price{
+      font-size:28px;
+      color:var(--danger);
+      letter-spacing:-.6px;
+    }
 
     .detail{
-      display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:4px;
     }
-    .detail-item{background:#091522;border:1px solid var(--line);border-radius:14px;padding:13px}
-    .detail-item span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:750;letter-spacing:.6px}
-    .detail-item strong{display:block;margin-top:5px;font-size:18px;word-break:break-word}
-    .source{margin-top:13px;color:var(--muted);font-size:12px;line-height:1.5}
 
-    .history{margin-top:16px}
-    .history h3{font-size:14px;margin:0 0 10px;color:#d9e2ee}
-    .history-list{display:grid;gap:8px}
-    .hist{
-      display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;
-      background:rgba(13,24,40,.76);border:1px solid var(--line);border-radius:14px;padding:11px 13px
+    .detail-item{
+      background:#091522;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:13px;
     }
-    .hist-main{min-width:0}
-    .hist-main strong{display:block;font-size:14px}
-    .hist-main span{display:block;color:var(--muted);font-size:11px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .hist-price{font-weight:900;font-size:16px}
-    .hist-price.bad{color:var(--danger)}
+
+    .detail-item span{
+      display:block;
+      color:var(--muted);
+      font-size:11px;
+      text-transform:uppercase;
+      font-weight:750;
+      letter-spacing:.6px;
+    }
+
+    .detail-item strong{
+      display:block;
+      margin-top:5px;
+      font-size:18px;
+      word-break:break-word;
+    }
+
+    .source{
+      margin-top:13px;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.5;
+    }
+
+    .history{
+      margin-top:16px;
+    }
+
+    .history h3{
+      font-size:14px;
+      margin:0 0 10px;
+      color:#d9e2ee;
+    }
+
+    .history-list{
+      display:grid;
+      gap:8px;
+    }
+
+    .hist{
+      display:grid;
+      grid-template-columns:1fr auto;
+      align-items:center;
+      gap:10px;
+      background:rgba(13,24,40,.76);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:11px 13px;
+    }
+
+    .hist-main{
+      min-width:0;
+    }
+
+    .hist-main strong{
+      display:block;
+      font-size:14px;
+    }
+
+    .hist-main span{
+      display:block;
+      color:var(--muted);
+      font-size:11px;
+      margin-top:2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .hist-price{
+      font-weight:900;
+      font-size:16px;
+    }
+
+    .hist-price.bad{
+      color:var(--danger);
+    }
 
     .toast{
-      position:fixed;left:50%;bottom:22px;transform:translate(-50%,14px);opacity:0;pointer-events:none;
-      background:#101d2d;border:1px solid var(--line);color:var(--text);border-radius:13px;padding:11px 16px;
-      box-shadow:var(--shadow);font-size:13px;font-weight:700;transition:.18s ease;z-index:9999;max-width:calc(100vw - 28px);text-align:center
+      position:fixed;
+      left:50%;
+      bottom:22px;
+      transform:translate(-50%,14px);
+      opacity:0;
+      pointer-events:none;
+      background:#101d2d;
+      border:1px solid var(--line);
+      color:var(--text);
+      border-radius:13px;
+      padding:11px 16px;
+      box-shadow:var(--shadow);
+      font-size:13px;
+      font-weight:700;
+      transition:.18s ease;
+      z-index:9999;
+      max-width:calc(100vw - 28px);
+      text-align:center;
     }
-    .toast.show{opacity:1;transform:translate(-50%,0)}
+
+    .toast.show{
+      opacity:1;
+      transform:translate(-50%,0);
+    }
+
+    /* RESULTADO COMPACTO PARA CELULAR */
+
+    .mobile-result{
+      display:none;
+      margin-top:12px;
+      background:#091522;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:12px 14px;
+      align-items:center;
+      gap:12px;
+    }
+
+    .mobile-result.show{
+      display:none;
+    }
+
+    .mobile-result-price{
+      min-width:118px;
+      font-size:26px;
+      line-height:1;
+      font-weight:950;
+      letter-spacing:-.7px;
+      white-space:nowrap;
+    }
+
+    .mobile-result-price.missing{
+      font-size:15px;
+      line-height:1.15;
+      color:var(--warning);
+      white-space:normal;
+    }
+
+    .mobile-result-price.bad{
+      font-size:17px;
+      color:var(--danger);
+    }
+
+    .mobile-result-info{
+      min-width:0;
+      flex:1;
+      border-left:1px solid var(--line);
+      padding-left:12px;
+    }
+
+    .mobile-result-info strong{
+      display:block;
+      font-size:16px;
+      line-height:1.15;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .mobile-result-info span{
+      display:block;
+      margin-top:4px;
+      color:var(--muted);
+      font-size:12px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
 
     @media(max-width:760px){
-      .app{padding:14px 12px 34px}
-      .brand p{display:none}
-      .grid{grid-template-columns:1fr}
-      .status-card{grid-template-columns:1fr auto}
-      .price{font-size:48px}
-      #reader{min-height:240px}
-      .scanner-empty{min-height:238px}
+
+      .app{
+        padding:14px 12px 34px;
+      }
+
+      .brand p{
+        display:none;
+      }
+
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      .status-card{
+        grid-template-columns:1fr auto;
+      }
+
+      .price{
+        font-size:48px;
+      }
+
+      #reader{
+        min-height:240px;
+      }
+
+      .scanner-empty{
+        min-height:238px;
+      }
+
+      /*
+       * NO CELULAR O RESULTADO FICA JUNTO DO LEITOR.
+       */
+
+      .mobile-result.show{
+        display:flex;
+        position:sticky;
+        bottom:10px;
+        z-index:20;
+        box-shadow:0 14px 34px rgba(0,0,0,.34);
+        backdrop-filter:blur(10px);
+      }
+
+      /*
+       * Esconde o card grande de resultado no celular,
+       * evitando precisar subir/descer a tela.
+       */
+
+      .grid > .card:nth-child(2){
+        display:none;
+      }
     }
 
     @media(max-width:430px){
-      .brand h1{font-size:18px}
-      .logo{width:41px;height:41px;border-radius:13px}
-      .sync-btn{padding:9px 10px;font-size:12px}
-      .status-card{padding:14px}
-      .status-count strong{font-size:18px}
-      .detail{grid-template-columns:1fr}
-      .price{font-size:44px}
+
+      .brand h1{
+        font-size:18px;
+      }
+
+      .logo{
+        width:41px;
+        height:41px;
+        border-radius:13px;
+      }
+
+      .sync-btn{
+        padding:9px 10px;
+        font-size:12px;
+      }
+
+      .status-card{
+        padding:14px;
+      }
+
+      .status-count strong{
+        font-size:18px;
+      }
+
+      .detail{
+        grid-template-columns:1fr;
+      }
+
+      .price{
+        font-size:44px;
+      }
     }
   </style>
 </head>
+
 <body>
+
   <div class="app">
+
     <header class="topbar">
+
       <div class="brand">
+
         <div class="logo">R$</div>
+
         <div>
           <h1>Busca Preço</h1>
           <p>Leitura por EAN • consulta local instantânea</p>
         </div>
+
       </div>
-      <button id="syncBtn" class="sync-btn" type="button" title="Atualizar banco de preços">
+
+      <button
+        id="syncBtn"
+        class="sync-btn"
+        type="button"
+        title="Atualizar banco de preços"
+      >
         ↻ <span>Atualizar banco</span>
       </button>
+
     </header>
 
+
     <section class="status-card">
+
       <div class="status-main">
+
         <div id="statusDot" class="dot"></div>
+
         <div style="min-width:0">
-          <div id="statusTitle" class="status-title">Preparando banco local...</div>
-          <div id="statusSub" class="status-sub">Verificando dados salvos neste aparelho</div>
+
+          <div
+            id="statusTitle"
+            class="status-title"
+          >
+            Preparando banco local...
+          </div>
+
+          <div
+            id="statusSub"
+            class="status-sub"
+          >
+            Verificando dados salvos neste aparelho
+          </div>
+
         </div>
+
       </div>
+
       <div class="status-count">
-        <strong id="eanCount">0</strong>
-        <span>EANs carregados</span>
+
+        <strong id="eanCount">
+          0
+        </strong>
+
+        <span>
+          EANs carregados
+        </span>
+
       </div>
+
     </section>
+
 
     <main class="grid">
+
       <section class="card">
+
         <div class="card-head">
+
           <h2>Leitor</h2>
+
           <span>EAN-13</span>
+
         </div>
+
+
         <div class="scanner-wrap">
+
           <div id="reader">
-            <div id="scannerEmpty" class="scanner-empty">
-              <div class="icon">▣</div>
-              <strong>Leitor pronto</strong>
-              <span>Abra a câmera e aponte para o código de barras.</span>
-            </div>
-          </div>
 
-          <div class="controls">
-            <button id="cameraBtn" class="btn btn-primary" type="button">Abrir leitor</button>
-            <button id="stopBtn" class="btn btn-secondary" type="button" disabled>Fechar</button>
-          </div>
+            <div
+              id="scannerEmpty"
+              class="scanner-empty"
+            >
 
-          <div class="manual">
-            <input id="manualEan" type="text" inputmode="numeric" autocomplete="off" maxlength="18" placeholder="Ou digite / passe o EAN aqui">
-            <button id="manualBtn" type="button">Buscar</button>
-          </div>
-        </div>
-      </section>
-
-      <section class="card">
-        <div class="card-head">
-          <h2>Preço encontrado</h2>
-          <span id="resultTime">Aguardando leitura</span>
-        </div>
-        <div class="result-area">
-          <div id="resultPlaceholder" class="result-placeholder">
-            <div class="big">⌁</div>
-            <strong>Bipe uma peça</strong>
-            <span>O preço aparecerá aqui imediatamente.</span>
-          </div>
-
-          <div id="result" class="result">
-            <div id="resultBox">
-              <div class="price-label">Valor</div>
-              <div id="resultPrice" class="price">R$ 0,00</div>
-
-              <div class="detail">
-                <div class="detail-item">
-                  <span>Referência</span>
-                  <strong id="resultRef">—</strong>
-                </div>
-                <div class="detail-item">
-                  <span>EAN</span>
-                  <strong id="resultEan">—</strong>
-                </div>
+              <div class="icon">
+                ▣
               </div>
 
-              <div id="resultSource" class="source"></div>
+              <strong>
+                Leitor pronto
+              </strong>
+
+              <span>
+                Abra a câmera e aponte para o código de barras.
+              </span>
+
             </div>
+
           </div>
+
+
+          <!-- RESULTADO IMEDIATO NO CELULAR -->
+
+          <div
+            id="mobileResult"
+            class="mobile-result"
+          >
+
+            <div
+              id="mobileResultPrice"
+              class="mobile-result-price"
+            >
+              R$ 0,00
+            </div>
+
+            <div class="mobile-result-info">
+
+              <strong id="mobileResultRef">
+                —
+              </strong>
+
+              <span id="mobileResultEan">
+                —
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="controls">
+
+            <button
+              id="cameraBtn"
+              class="btn btn-primary"
+              type="button"
+            >
+              Abrir leitor
+            </button>
+
+            <button
+              id="stopBtn"
+              class="btn btn-secondary"
+              type="button"
+              disabled
+            >
+              Fechar
+            </button>
+
+          </div>
+
+
+          <div class="manual">
+
+            <input
+              id="manualEan"
+              type="text"
+              inputmode="numeric"
+              autocomplete="off"
+              maxlength="18"
+              placeholder="Ou digite / passe o EAN aqui"
+            >
+
+            <button
+              id="manualBtn"
+              type="button"
+            >
+              Buscar
+            </button>
+
+          </div>
+
         </div>
+
       </section>
+
+
+      <section class="card">
+
+        <div class="card-head">
+
+          <h2>
+            Preço encontrado
+          </h2>
+
+          <span id="resultTime">
+            Aguardando leitura
+          </span>
+
+        </div>
+
+
+        <div class="result-area">
+
+          <div
+            id="resultPlaceholder"
+            class="result-placeholder"
+          >
+
+            <div class="big">
+              ⌁
+            </div>
+
+            <strong>
+              Bipe uma peça
+            </strong>
+
+            <span>
+              O preço aparecerá aqui imediatamente.
+            </span>
+
+          </div>
+
+
+          <div
+            id="result"
+            class="result"
+          >
+
+            <div id="resultBox">
+
+              <div class="price-label">
+                Valor
+              </div>
+
+              <div
+                id="resultPrice"
+                class="price"
+              >
+                R$ 0,00
+              </div>
+
+
+              <div class="detail">
+
+                <div class="detail-item">
+
+                  <span>
+                    Referência
+                  </span>
+
+                  <strong id="resultRef">
+                    —
+                  </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                  <span>
+                    EAN
+                  </span>
+
+                  <strong id="resultEan">
+                    —
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <div
+                id="resultSource"
+                class="source"
+              ></div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
     </main>
 
+
     <section class="history">
-      <h3>Últimas leituras</h3>
-      <div id="historyList" class="history-list"></div>
+
+      <h3>
+        Últimas leituras
+      </h3>
+
+      <div
+        id="historyList"
+        class="history-list"
+      ></div>
+
     </section>
+
   </div>
 
-  <div id="toast" class="toast"></div>
+
+  <div
+    id="toast"
+    class="toast"
+  ></div>
+
 
 <script>
+
 (() => {
+
   'use strict';
+
 
   /*
    * COLE AQUI A URL /exec DO WEB APP DO APPS SCRIPT
-   * Exemplo:
-   * https://script.google.com/macros/s/SEU_DEPLOYMENT_ID/exec
    */
-  const API_URL = 'https://script.google.com/macros/s/AKfycbwUa5DLhtKpa2kUAMxicHQsPlIG3gsLW-D3Scq6WUjAw42JIcUerAgy4f1H3TxsJLTB/exec';
 
-  const DB_NAME = 'HS_BUSCA_PRECO_DB';
-  const DB_VERSION = 1;
-  const STORE_NAME = 'items';
-  const META_KEY = 'hs_busca_preco_meta_v1';
-  const MAX_CACHE_AGE_MS = 30 * 60 * 1000; // 30 minutos
-  const DUPLICATE_WINDOW_MS = 900;
+  const API_URL =
+    'COLE_AQUI_A_URL_DO_APPS_SCRIPT';
+
+
+  const DB_NAME =
+    'HS_BUSCA_PRECO_DB';
+
+  const DB_VERSION =
+    1;
+
+  const STORE_NAME =
+    'items';
+
+  const META_KEY =
+    'hs_busca_preco_meta_v1';
+
+  const MAX_CACHE_AGE_MS =
+    30 * 60 * 1000;
+
+  const DUPLICATE_WINDOW_MS =
+    900;
+
 
   let db = null;
-  let priceMap = new Map();
+
+  let priceMap =
+    new Map();
+
   let scanner = null;
-  let scanning = false;
-  let syncing = false;
-  let history = [];
-  let lastScan = { ean: '', at: 0 };
 
-  const el = id => document.getElementById(id);
+  let scanning =
+    false;
 
-  const statusDot = el('statusDot');
-  const statusTitle = el('statusTitle');
-  const statusSub = el('statusSub');
-  const eanCount = el('eanCount');
-  const syncBtn = el('syncBtn');
-  const cameraBtn = el('cameraBtn');
-  const stopBtn = el('stopBtn');
-  const manualEan = el('manualEan');
-  const manualBtn = el('manualBtn');
-  const scannerEmpty = el('scannerEmpty');
-  const resultPlaceholder = el('resultPlaceholder');
-  const result = el('result');
-  const resultBox = el('resultBox');
-  const resultPrice = el('resultPrice');
-  const resultRef = el('resultRef');
-  const resultEan = el('resultEan');
-  const resultSource = el('resultSource');
-  const resultTime = el('resultTime');
-  const historyList = el('historyList');
-  const toast = el('toast');
+  let syncing =
+    false;
 
-  function normalizeEan(value) {
-    return String(value ?? '').replace(/\D/g, '').trim();
-  }
+  let history =
+    [];
 
-  function formatBRL(value) {
-    const n = Number(value);
-    if (!Number.isFinite(n)) return null;
-    return n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-  }
+  let lastScan = {
+    ean:'',
+    at:0
+  };
 
-  function nowTime() {
-    return new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-  }
 
-  function setStatus(type, title, sub) {
-    statusDot.className = 'dot' + (type ? ' ' + type : '');
-    statusTitle.textContent = title;
-    statusSub.textContent = sub || '';
-  }
+  const el = id =>
+    document.getElementById(id);
 
-  function showToast(message) {
-    toast.textContent = message;
-    toast.classList.add('show');
-    clearTimeout(showToast._t);
-    showToast._t = setTimeout(() => toast.classList.remove('show'), 2200);
-  }
 
-  function beep(ok = true) {
-    try {
-      const AudioCtx = window.AudioContext || window.webkitAudioContext;
-      const ctx = new AudioCtx();
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.type = 'sine';
-      osc.frequency.value = ok ? 880 : 220;
-      gain.gain.value = 0.055;
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-      osc.start();
-      osc.stop(ctx.currentTime + (ok ? 0.07 : 0.13));
-      osc.onended = () => ctx.close();
-    } catch (_) {}
+  const statusDot =
+    el('statusDot');
 
-    if (navigator.vibrate) navigator.vibrate(ok ? 35 : [70, 45, 70]);
-  }
+  const statusTitle =
+    el('statusTitle');
 
-  function readMeta() {
-    try { return JSON.parse(localStorage.getItem(META_KEY) || '{}'); }
-    catch (_) { return {}; }
-  }
+  const statusSub =
+    el('statusSub');
 
-  function writeMeta(meta) {
-    localStorage.setItem(META_KEY, JSON.stringify(meta));
-  }
+  const eanCount =
+    el('eanCount');
 
-  function openDb() {
-    return new Promise((resolve, reject) => {
-      const req = indexedDB.open(DB_NAME, DB_VERSION);
+  const syncBtn =
+    el('syncBtn');
 
-      req.onupgradeneeded = () => {
-        const d = req.result;
-        if (!d.objectStoreNames.contains(STORE_NAME)) {
-          d.createObjectStore(STORE_NAME, { keyPath: 'ean' });
-        }
-      };
+  const cameraBtn =
+    el('cameraBtn');
 
-      req.onsuccess = () => {
-        db = req.result;
-        resolve(db);
-      };
+  const stopBtn =
+    el('stopBtn');
 
-      req.onerror = () => reject(req.error);
-    });
-  }
+  const manualEan =
+    el('manualEan');
 
-  function loadCachedItems() {
-    return new Promise((resolve, reject) => {
-      const tx = db.transaction(STORE_NAME, 'readonly');
-      const store = tx.objectStore(STORE_NAME);
-      const req = store.getAll();
+  const manualBtn =
+    el('manualBtn');
 
-      req.onsuccess = () => resolve(req.result || []);
-      req.onerror = () => reject(req.error);
-    });
-  }
+  const scannerEmpty =
+    el('scannerEmpty');
 
-  function replaceCachedItems(items) {
-    return new Promise((resolve, reject) => {
-      const tx = db.transaction(STORE_NAME, 'readwrite');
-      const store = tx.objectStore(STORE_NAME);
+  const resultPlaceholder =
+    el('resultPlaceholder');
 
-      store.clear();
-      for (const item of items) store.put(item);
+  const result =
+    el('result');
 
-      tx.oncomplete = () => resolve();
-      tx.onerror = () => reject(tx.error);
-      tx.onabort = () => reject(tx.error || new Error('Transação cancelada.'));
-    });
-  }
+  const resultBox =
+    el('resultBox');
 
-  function rebuildMemoryMap(items) {
-    priceMap = new Map();
-    for (const item of items) {
-      if (item && item.ean) priceMap.set(String(item.ean), item);
-    }
-    eanCount.textContent = priceMap.size.toLocaleString('pt-BR');
-  }
+  const resultPrice =
+    el('resultPrice');
 
-  function jsonp(url, timeoutMs = 90000) {
-    return new Promise((resolve, reject) => {
-      const callbackName = '__hsPrecoCb_' + Date.now() + '_' + Math.random().toString(36).slice(2);
-      const script = document.createElement('script');
-      const sep = url.includes('?') ? '&' : '?';
-      let finished = false;
+  const resultRef =
+    el('resultRef');
 
-      const cleanup = () => {
-        if (script.parentNode) script.parentNode.removeChild(script);
-        try { delete window[callbackName]; } catch (_) { window[callbackName] = undefined; }
-      };
+  const resultEan =
+    el('resultEan');
 
-      const timer = setTimeout(() => {
-        if (finished) return;
-        finished = true;
-        cleanup();
-        reject(new Error('Tempo excedido ao carregar o banco.'));
-      }, timeoutMs);
+  const resultSource =
+    el('resultSource');
 
-      window[callbackName] = data => {
-        if (finished) return;
-        finished = true;
-        clearTimeout(timer);
-        cleanup();
-        resolve(data);
-      };
+  const resultTime =
+    el('resultTime');
 
-      script.onerror = () => {
-        if (finished) return;
-        finished = true;
-        clearTimeout(timer);
-        cleanup();
-        reject(new Error('Não foi possível acessar o servidor.'));
-      };
 
-      script.src = `${url}${sep}action=data&callback=${encodeURIComponent(callbackName)}&_=${Date.now()}`;
-      document.head.appendChild(script);
-    });
-  }
+  /*
+   * NOVO RESULTADO COMPACTO MOBILE
+   */
 
-  async function syncData({ silent = false } = {}) {
-    if (syncing) return;
-    if (!API_URL || API_URL.includes('COLE_AQUI')) {
-      if (!priceMap.size) setStatus('error', 'Backend ainda não configurado', 'Cole a URL /exec do Apps Script no arquivo HTML.');
-      return;
-    }
+  const mobileResult =
+    el('mobileResult');
 
-    syncing = true;
-    syncBtn.disabled = true;
+  const mobileResultPrice =
+    el('mobileResultPrice');
 
-    if (!silent || !priceMap.size) {
-      setStatus('', 'Atualizando banco local...', 'Lendo EANs, referências e preços.');
-    } else {
-      statusSub.textContent = 'Atualizando silenciosamente em segundo plano...';
-    }
+  const mobileResultRef =
+    el('mobileResultRef');
 
-    try {
-      const payload = await jsonp(API_URL);
+  const mobileResultEan =
+    el('mobileResultEan');
 
-      if (!payload || payload.ok !== true || !Array.isArray(payload.items)) {
-        throw new Error((payload && payload.message) || 'Resposta inválida do servidor.');
-      }
 
-      const cleaned = payload.items
-        .map(x => ({
-          ean: normalizeEan(x.ean),
-          ref: String(x.ref ?? '').trim().toUpperCase(),
-          price: x.price === null || x.price === '' || typeof x.price === 'undefined' ? null : Number(x.price)
-        }))
-        .filter(x => x.ean && x.ref);
+  const historyList =
+    el('historyList');
 
-      await replaceCachedItems(cleaned);
-      rebuildMemoryMap(cleaned);
+  const toast =
+    el('toast');
 
-      const stamp = Date.now();
-      writeMeta({
-        updatedAt: stamp,
-        sourceUpdatedAt: payload.generatedAt || null,
-        count: cleaned.length
-      });
 
-      const semPreco = payload.stats && Number(payload.stats.semPreco || 0);
-      const extra = semPreco ? ` • ${semPreco.toLocaleString('pt-BR')} sem preço` : '';
-      setStatus('ready', 'Banco local pronto', `${cleaned.length.toLocaleString('pt-BR')} EANs disponíveis${extra}`);
-      if (!silent) showToast('Banco de preços atualizado.');
-    } catch (err) {
-      console.error(err);
-      if (priceMap.size) {
-        setStatus('ready', 'Usando banco salvo', `Falha na atualização. ${priceMap.size.toLocaleString('pt-BR')} EANs continuam disponíveis.`);
-        showToast('Não foi possível atualizar agora. O banco salvo continua funcionando.');
-      } else {
-        setStatus('error', 'Não foi possível carregar o banco', err.message || 'Tente novamente.');
-        showToast('Erro ao carregar o banco de preços.');
-      }
-    } finally {
-      syncing = false;
-      syncBtn.disabled = false;
-    }
-  }
+  function normalizeEan(value){
 
-  async function bootCache() {
-    try {
-      if (!('indexedDB' in window)) throw new Error('IndexedDB indisponível neste navegador.');
-
-      await openDb();
-      const items = await loadCachedItems();
-      rebuildMemoryMap(items);
-
-      const meta = readMeta();
-
-      if (items.length) {
-        const when = meta.updatedAt ? new Date(meta.updatedAt).toLocaleString('pt-BR') : 'data anterior';
-        setStatus('ready', 'Banco local pronto', `Cache carregado • última atualização: ${when}`);
-
-        const stale = !meta.updatedAt || (Date.now() - meta.updatedAt) > MAX_CACHE_AGE_MS;
-        if (stale) syncData({ silent: true });
-      } else {
-        await syncData({ silent: false });
-      }
-    } catch (err) {
-      console.error(err);
-      setStatus('error', 'Falha ao abrir armazenamento local', 'Atualize a página ou use outro navegador.');
-    }
-  }
-
-  function lookup(rawEan) {
-    const ean = normalizeEan(rawEan);
-    if (!ean) return;
-
-    const now = Date.now();
-    if (ean === lastScan.ean && (now - lastScan.at) < DUPLICATE_WINDOW_MS) return;
-    lastScan = { ean, at: now };
-
-    if (ean.length !== 13) {
-      renderNotFound(ean, 'O código lido não possui 13 dígitos.');
-      beep(false);
-      return;
-    }
-
-    const item = priceMap.get(ean);
-
-    if (!item) {
-      renderNotFound(ean, 'EAN não localizado no banco carregado.');
-      beep(false);
-      return;
-    }
-
-    renderFound(item);
-    beep(true);
-  }
-
-  function renderFound(item) {
-    resultPlaceholder.style.display = 'none';
-    result.classList.add('show');
-    resultBox.className = '';
-
-    const formatted = formatBRL(item.price);
-    resultPrice.className = formatted ? 'price' : 'price missing';
-    resultPrice.textContent = formatted || 'Preço não cadastrado';
-    resultRef.textContent = item.ref || '—';
-    resultEan.textContent = item.ean || '—';
-    resultSource.textContent = formatted
-      ? 'Preço vinculado pela referência na aba Leonardo.'
-      : 'O EAN e a referência foram encontrados, mas essa referência não possui preço na tabela Leonardo.';
-    resultTime.textContent = nowTime();
-
-    addHistory(item.ean, item.ref, formatted || 'Sem preço', !!formatted);
-  }
-
-  function renderNotFound(ean, message) {
-    resultPlaceholder.style.display = 'none';
-    result.classList.add('show');
-    resultBox.className = 'result-bad';
-
-    resultPrice.className = 'price';
-    resultPrice.textContent = 'Não encontrado';
-    resultRef.textContent = '—';
-    resultEan.textContent = ean || '—';
-    resultSource.textContent = message;
-    resultTime.textContent = nowTime();
-
-    addHistory(ean, 'Não localizado', '—', false);
-  }
-
-  function addHistory(ean, ref, price, ok) {
-    history.unshift({ ean, ref, price, ok, time: nowTime() });
-    history = history.slice(0, 12);
-
-    historyList.innerHTML = history.map(x => `
-      <div class="hist">
-        <div class="hist-main">
-          <strong>${escapeHtml(x.ref)}</strong>
-          <span>${escapeHtml(x.ean)} • ${escapeHtml(x.time)}</span>
-        </div>
-        <div class="hist-price ${x.ok ? '' : 'bad'}">${escapeHtml(x.price)}</div>
-      </div>
-    `).join('');
-  }
-
-  function escapeHtml(value) {
     return String(value ?? '')
-      .replaceAll('&','&amp;')
-      .replaceAll('<','&lt;')
-      .replaceAll('>','&gt;')
-      .replaceAll('"','&quot;')
-      .replaceAll("'","&#039;");
+      .replace(/\D/g,'')
+      .trim();
+
   }
 
-  async function startScanner() {
-    if (scanning) return;
-    if (!priceMap.size) {
-      showToast('Aguarde o banco local terminar de carregar.');
-      return;
-    }
 
-    if (!window.Html5Qrcode) {
-      showToast('Leitor não carregado. Verifique a conexão com a internet.');
-      return;
-    }
+  function formatBRL(value){
 
-    try {
-      scannerEmpty.style.display = 'none';
+    const n =
+      Number(value);
 
-      scanner = new Html5Qrcode('reader', {
-        formatsToSupport: [Html5QrcodeSupportedFormats.EAN_13],
-        verbose: false,
-        experimentalFeatures: { useBarCodeDetectorIfSupported: true }
-      });
+    if(!Number.isFinite(n))
+      return null;
 
-      const scanConfig = {
-        fps: 12,
-        qrbox: (viewfinderWidth, viewfinderHeight) => {
-          const width = Math.floor(Math.min(viewfinderWidth * 0.90, 520));
-          const height = Math.floor(Math.min(Math.max(110, viewfinderHeight * 0.34), 180));
-          return { width, height };
-        },
-        aspectRatio: 1.7777778,
-        disableFlip: true
-      };
+    return n.toLocaleString(
+      'pt-BR',
+      {
+        style:'currency',
+        currency:'BRL'
+      }
+    );
 
-      await scanner.start(
-        { facingMode: 'environment' },
-        scanConfig,
-        decodedText => lookup(decodedText),
-        () => {}
+  }
+
+
+  function nowTime(){
+
+    return new Date()
+      .toLocaleTimeString(
+        'pt-BR',
+        {
+          hour:'2-digit',
+          minute:'2-digit',
+          second:'2-digit'
+        }
       );
 
-      scanning = true;
-      cameraBtn.disabled = true;
-      stopBtn.disabled = false;
-    } catch (err) {
+  }
+
+
+  function setStatus(
+    type,
+    title,
+    sub
+  ){
+
+    statusDot.className =
+      'dot' +
+      (type ? ' ' + type : '');
+
+    statusTitle.textContent =
+      title;
+
+    statusSub.textContent =
+      sub || '';
+
+  }
+
+
+  function showToast(message){
+
+    toast.textContent =
+      message;
+
+    toast.classList.add(
+      'show'
+    );
+
+    clearTimeout(
+      showToast._t
+    );
+
+    showToast._t =
+      setTimeout(
+        () =>
+          toast.classList.remove(
+            'show'
+          ),
+        2200
+      );
+
+  }
+
+
+  /*
+   * BIPE MAIS ALTO
+   */
+
+  function beep(ok = true){
+
+    try{
+
+      const AudioCtx =
+        window.AudioContext ||
+        window.webkitAudioContext;
+
+      const ctx =
+        new AudioCtx();
+
+      const osc =
+        ctx.createOscillator();
+
+      const gain =
+        ctx.createGain();
+
+      osc.type =
+        'sine';
+
+      osc.frequency.value =
+        ok ? 880 : 220;
+
+
+      /*
+       * Volume aumentado.
+       */
+
+      gain.gain.value =
+        ok ? 0.16 : 0.12;
+
+
+      osc.connect(gain);
+
+      gain.connect(
+        ctx.destination
+      );
+
+      osc.start();
+
+
+      /*
+       * Bipe também um pouco mais longo.
+       */
+
+      osc.stop(
+        ctx.currentTime +
+        (ok ? 0.11 : 0.16)
+      );
+
+
+      osc.onended =
+        () => ctx.close();
+
+    }
+    catch(_){}
+
+
+    if(navigator.vibrate){
+
+      navigator.vibrate(
+        ok
+          ? 35
+          : [70,45,70]
+      );
+
+    }
+
+  }
+
+
+  function readMeta(){
+
+    try{
+
+      return JSON.parse(
+        localStorage.getItem(
+          META_KEY
+        ) || '{}'
+      );
+
+    }
+    catch(_){
+
+      return {};
+
+    }
+
+  }
+
+
+  function writeMeta(meta){
+
+    localStorage.setItem(
+      META_KEY,
+      JSON.stringify(meta)
+    );
+
+  }
+
+
+  function openDb(){
+
+    return new Promise(
+      (resolve,reject) => {
+
+        const req =
+          indexedDB.open(
+            DB_NAME,
+            DB_VERSION
+          );
+
+
+        req.onupgradeneeded =
+          () => {
+
+            const d =
+              req.result;
+
+            if(
+              !d.objectStoreNames
+                .contains(
+                  STORE_NAME
+                )
+            ){
+
+              d.createObjectStore(
+                STORE_NAME,
+                {
+                  keyPath:'ean'
+                }
+              );
+
+            }
+
+          };
+
+
+        req.onsuccess =
+          () => {
+
+            db =
+              req.result;
+
+            resolve(db);
+
+          };
+
+
+        req.onerror =
+          () =>
+            reject(
+              req.error
+            );
+
+      }
+    );
+
+  }
+
+
+  function loadCachedItems(){
+
+    return new Promise(
+      (resolve,reject) => {
+
+        const tx =
+          db.transaction(
+            STORE_NAME,
+            'readonly'
+          );
+
+        const store =
+          tx.objectStore(
+            STORE_NAME
+          );
+
+        const req =
+          store.getAll();
+
+
+        req.onsuccess =
+          () =>
+            resolve(
+              req.result || []
+            );
+
+
+        req.onerror =
+          () =>
+            reject(
+              req.error
+            );
+
+      }
+    );
+
+  }
+
+
+  function replaceCachedItems(items){
+
+    return new Promise(
+      (resolve,reject) => {
+
+        const tx =
+          db.transaction(
+            STORE_NAME,
+            'readwrite'
+          );
+
+        const store =
+          tx.objectStore(
+            STORE_NAME
+          );
+
+
+        store.clear();
+
+
+        for(
+          const item of items
+        ){
+
+          store.put(item);
+
+        }
+
+
+        tx.oncomplete =
+          () => resolve();
+
+
+        tx.onerror =
+          () =>
+            reject(
+              tx.error
+            );
+
+
+        tx.onabort =
+          () =>
+            reject(
+              tx.error ||
+              new Error(
+                'Transação cancelada.'
+              )
+            );
+
+      }
+    );
+
+  }
+
+
+  function rebuildMemoryMap(
+    items
+  ){
+
+    priceMap =
+      new Map();
+
+
+    for(
+      const item of items
+    ){
+
+      if(
+        item &&
+        item.ean
+      ){
+
+        priceMap.set(
+          String(item.ean),
+          item
+        );
+
+      }
+
+    }
+
+
+    eanCount.textContent =
+      priceMap.size
+        .toLocaleString(
+          'pt-BR'
+        );
+
+  }
+
+
+  function jsonp(
+    url,
+    timeoutMs = 90000
+  ){
+
+    return new Promise(
+      (resolve,reject) => {
+
+        const callbackName =
+          '__hsPrecoCb_' +
+          Date.now() +
+          '_' +
+          Math.random()
+            .toString(36)
+            .slice(2);
+
+
+        const script =
+          document.createElement(
+            'script'
+          );
+
+
+        const sep =
+          url.includes('?')
+            ? '&'
+            : '?';
+
+
+        let finished =
+          false;
+
+
+        const cleanup =
+          () => {
+
+            if(
+              script.parentNode
+            ){
+
+              script.parentNode
+                .removeChild(
+                  script
+                );
+
+            }
+
+
+            try{
+
+              delete window[
+                callbackName
+              ];
+
+            }
+            catch(_){
+
+              window[
+                callbackName
+              ] = undefined;
+
+            }
+
+          };
+
+
+        const timer =
+          setTimeout(
+            () => {
+
+              if(finished)
+                return;
+
+
+              finished =
+                true;
+
+
+              cleanup();
+
+
+              reject(
+                new Error(
+                  'Tempo excedido ao carregar o banco.'
+                )
+              );
+
+            },
+            timeoutMs
+          );
+
+
+        window[
+          callbackName
+        ] =
+          data => {
+
+            if(finished)
+              return;
+
+
+            finished =
+              true;
+
+
+            clearTimeout(
+              timer
+            );
+
+
+            cleanup();
+
+
+            resolve(
+              data
+            );
+
+          };
+
+
+        script.onerror =
+          () => {
+
+            if(finished)
+              return;
+
+
+            finished =
+              true;
+
+
+            clearTimeout(
+              timer
+            );
+
+
+            cleanup();
+
+
+            reject(
+              new Error(
+                'Não foi possível acessar o servidor.'
+              )
+            );
+
+          };
+
+
+        script.src =
+          `${url}${sep}action=data&callback=${encodeURIComponent(callbackName)}&_=${Date.now()}`;
+
+
+        document.head
+          .appendChild(
+            script
+          );
+
+      }
+    );
+
+  }
+
+
+  async function syncData(
+    {
+      silent = false
+    } = {}
+  ){
+
+    if(syncing)
+      return;
+
+
+    if(
+      !API_URL ||
+      API_URL.includes(
+        'COLE_AQUI'
+      )
+    ){
+
+      if(
+        !priceMap.size
+      ){
+
+        setStatus(
+          'error',
+          'Backend ainda não configurado',
+          'Cole a URL /exec do Apps Script no arquivo HTML.'
+        );
+
+      }
+
+      return;
+
+    }
+
+
+    syncing =
+      true;
+
+
+    syncBtn.disabled =
+      true;
+
+
+    if(
+      !silent ||
+      !priceMap.size
+    ){
+
+      setStatus(
+        '',
+        'Atualizando banco local...',
+        'Lendo EANs, referências e preços.'
+      );
+
+    }
+    else{
+
+      statusSub.textContent =
+        'Atualizando silenciosamente em segundo plano...';
+
+    }
+
+
+    try{
+
+      const payload =
+        await jsonp(
+          API_URL
+        );
+
+
+      if(
+        !payload ||
+        payload.ok !== true ||
+        !Array.isArray(
+          payload.items
+        )
+      ){
+
+        throw new Error(
+          (
+            payload &&
+            payload.message
+          ) ||
+          'Resposta inválida do servidor.'
+        );
+
+      }
+
+
+      const cleaned =
+        payload.items
+
+          .map(
+            x => ({
+              ean:
+                normalizeEan(
+                  x.ean
+                ),
+
+              ref:
+                String(
+                  x.ref ?? ''
+                )
+                  .trim()
+                  .toUpperCase(),
+
+              price:
+                x.price === null ||
+                x.price === '' ||
+                typeof x.price ===
+                  'undefined'
+
+                  ? null
+
+                  : Number(
+                      x.price
+                    )
+            })
+          )
+
+          .filter(
+            x =>
+              x.ean &&
+              x.ref
+          );
+
+
+      await replaceCachedItems(
+        cleaned
+      );
+
+
+      rebuildMemoryMap(
+        cleaned
+      );
+
+
+      const stamp =
+        Date.now();
+
+
+      writeMeta({
+        updatedAt:
+          stamp,
+
+        sourceUpdatedAt:
+          payload.generatedAt ||
+          null,
+
+        count:
+          cleaned.length
+      });
+
+
+      const semPreco =
+        payload.stats &&
+        Number(
+          payload.stats.semPreco ||
+          0
+        );
+
+
+      const extra =
+        semPreco
+          ? ` • ${semPreco.toLocaleString('pt-BR')} sem preço`
+          : '';
+
+
+      setStatus(
+        'ready',
+        'Banco local pronto',
+        `${cleaned.length.toLocaleString('pt-BR')} EANs disponíveis${extra}`
+      );
+
+
+      if(!silent){
+
+        showToast(
+          'Banco de preços atualizado.'
+        );
+
+      }
+
+    }
+    catch(err){
+
       console.error(err);
-      scannerEmpty.style.display = 'flex';
-      showToast('Não foi possível abrir a câmera. Verifique a permissão do navegador.');
-      try { if (scanner) await scanner.clear(); } catch (_) {}
-      scanner = null;
+
+
+      if(
+        priceMap.size
+      ){
+
+        setStatus(
+          'ready',
+          'Usando banco salvo',
+          `Falha na atualização. ${priceMap.size.toLocaleString('pt-BR')} EANs continuam disponíveis.`
+        );
+
+
+        showToast(
+          'Não foi possível atualizar agora. O banco salvo continua funcionando.'
+        );
+
+      }
+      else{
+
+        setStatus(
+          'error',
+          'Não foi possível carregar o banco',
+          err.message ||
+          'Tente novamente.'
+        );
+
+
+        showToast(
+          'Erro ao carregar o banco de preços.'
+        );
+
+      }
+
     }
+    finally{
+
+      syncing =
+        false;
+
+
+      syncBtn.disabled =
+        false;
+
+    }
+
   }
 
-  async function stopScanner() {
-    if (!scanner) return;
 
-    try {
-      if (scanning) await scanner.stop();
+  async function bootCache(){
+
+    try{
+
+      if(
+        !(
+          'indexedDB' in window
+        )
+      ){
+
+        throw new Error(
+          'IndexedDB indisponível neste navegador.'
+        );
+
+      }
+
+
+      await openDb();
+
+
+      const items =
+        await loadCachedItems();
+
+
+      rebuildMemoryMap(
+        items
+      );
+
+
+      const meta =
+        readMeta();
+
+
+      if(
+        items.length
+      ){
+
+        const when =
+          meta.updatedAt
+
+            ? new Date(
+                meta.updatedAt
+              )
+                .toLocaleString(
+                  'pt-BR'
+                )
+
+            : 'data anterior';
+
+
+        setStatus(
+          'ready',
+          'Banco local pronto',
+          `Cache carregado • última atualização: ${when}`
+        );
+
+
+        const stale =
+          !meta.updatedAt ||
+          (
+            Date.now() -
+            meta.updatedAt
+          ) >
+          MAX_CACHE_AGE_MS;
+
+
+        if(stale){
+
+          syncData({
+            silent:true
+          });
+
+        }
+
+      }
+      else{
+
+        await syncData({
+          silent:false
+        });
+
+      }
+
+    }
+    catch(err){
+
+      console.error(err);
+
+
+      setStatus(
+        'error',
+        'Falha ao abrir armazenamento local',
+        'Atualize a página ou use outro navegador.'
+      );
+
+    }
+
+  }
+
+
+  function lookup(
+    rawEan
+  ){
+
+    const ean =
+      normalizeEan(
+        rawEan
+      );
+
+
+    if(!ean)
+      return;
+
+
+    const now =
+      Date.now();
+
+
+    if(
+      ean ===
+        lastScan.ean &&
+      (
+        now -
+        lastScan.at
+      ) <
+        DUPLICATE_WINDOW_MS
+    ){
+
+      return;
+
+    }
+
+
+    lastScan = {
+      ean,
+      at:now
+    };
+
+
+    if(
+      ean.length !== 13
+    ){
+
+      renderNotFound(
+        ean,
+        'O código lido não possui 13 dígitos.'
+      );
+
+
+      beep(false);
+
+      return;
+
+    }
+
+
+    const item =
+      priceMap.get(
+        ean
+      );
+
+
+    if(!item){
+
+      renderNotFound(
+        ean,
+        'EAN não localizado no banco carregado.'
+      );
+
+
+      beep(false);
+
+      return;
+
+    }
+
+
+    renderFound(
+      item
+    );
+
+
+    beep(true);
+
+  }
+
+
+  function renderFound(
+    item
+  ){
+
+    resultPlaceholder.style.display =
+      'none';
+
+
+    result.classList.add(
+      'show'
+    );
+
+
+    resultBox.className =
+      '';
+
+
+    const formatted =
+      formatBRL(
+        item.price
+      );
+
+
+    resultPrice.className =
+      formatted
+        ? 'price'
+        : 'price missing';
+
+
+    resultPrice.textContent =
+      formatted ||
+      'Preço não cadastrado';
+
+
+    resultRef.textContent =
+      item.ref ||
+      '—';
+
+
+    resultEan.textContent =
+      item.ean ||
+      '—';
+
+
+    resultSource.textContent =
+      formatted
+
+        ? 'Preço vinculado pela referência na aba Leonardo.'
+
+        : 'O EAN e a referência foram encontrados, mas essa referência não possui preço na tabela Leonardo.';
+
+
+    resultTime.textContent =
+      nowTime();
+
+
+    /*
+     * RESULTADO MOBILE
+     */
+
+    mobileResult.classList.add(
+      'show'
+    );
+
+
+    mobileResultPrice.className =
+      formatted
+
+        ? 'mobile-result-price'
+
+        : 'mobile-result-price missing';
+
+
+    mobileResultPrice.textContent =
+      formatted ||
+      'Preço não cadastrado';
+
+
+    mobileResultRef.textContent =
+      item.ref ||
+      '—';
+
+
+    mobileResultEan.textContent =
+      item.ean ||
+      '—';
+
+
+    addHistory(
+      item.ean,
+      item.ref,
+      formatted ||
+      'Sem preço',
+      !!formatted
+    );
+
+  }
+
+
+  function renderNotFound(
+    ean,
+    message
+  ){
+
+    resultPlaceholder.style.display =
+      'none';
+
+
+    result.classList.add(
+      'show'
+    );
+
+
+    resultBox.className =
+      'result-bad';
+
+
+    resultPrice.className =
+      'price';
+
+
+    resultPrice.textContent =
+      'Não encontrado';
+
+
+    resultRef.textContent =
+      '—';
+
+
+    resultEan.textContent =
+      ean ||
+      '—';
+
+
+    resultSource.textContent =
+      message;
+
+
+    resultTime.textContent =
+      nowTime();
+
+
+    /*
+     * RESULTADO MOBILE
+     */
+
+    mobileResult.classList.add(
+      'show'
+    );
+
+
+    mobileResultPrice.className =
+      'mobile-result-price bad';
+
+
+    mobileResultPrice.textContent =
+      'Não encontrado';
+
+
+    mobileResultRef.textContent =
+      '—';
+
+
+    mobileResultEan.textContent =
+      ean ||
+      '—';
+
+
+    addHistory(
+      ean,
+      'Não localizado',
+      '—',
+      false
+    );
+
+  }
+
+
+  function addHistory(
+    ean,
+    ref,
+    price,
+    ok
+  ){
+
+    history.unshift({
+      ean,
+      ref,
+      price,
+      ok,
+      time:nowTime()
+    });
+
+
+    history =
+      history.slice(
+        0,
+        12
+      );
+
+
+    historyList.innerHTML =
+      history.map(
+        x => `
+
+          <div class="hist">
+
+            <div class="hist-main">
+
+              <strong>
+                ${escapeHtml(x.ref)}
+              </strong>
+
+              <span>
+                ${escapeHtml(x.ean)}
+                •
+                ${escapeHtml(x.time)}
+              </span>
+
+            </div>
+
+            <div
+              class="hist-price ${x.ok ? '' : 'bad'}"
+            >
+              ${escapeHtml(x.price)}
+            </div>
+
+          </div>
+
+        `
+      ).join('');
+
+  }
+
+
+  function escapeHtml(
+    value
+  ){
+
+    return String(
+      value ?? ''
+    )
+
+      .replaceAll(
+        '&',
+        '&amp;'
+      )
+
+      .replaceAll(
+        '<',
+        '&lt;'
+      )
+
+      .replaceAll(
+        '>',
+        '&gt;'
+      )
+
+      .replaceAll(
+        '"',
+        '&quot;'
+      )
+
+      .replaceAll(
+        "'",
+        '&#039;'
+      );
+
+  }
+
+
+  async function startScanner(){
+
+    if(scanning)
+      return;
+
+
+    if(
+      !priceMap.size
+    ){
+
+      showToast(
+        'Aguarde o banco local terminar de carregar.'
+      );
+
+      return;
+
+    }
+
+
+    if(
+      !window.Html5Qrcode
+    ){
+
+      showToast(
+        'Leitor não carregado. Verifique a conexão com a internet.'
+      );
+
+      return;
+
+    }
+
+
+    try{
+
+      scannerEmpty.style.display =
+        'none';
+
+
+      scanner =
+        new Html5Qrcode(
+          'reader',
+          {
+            formatsToSupport:[
+              Html5QrcodeSupportedFormats
+                .EAN_13
+            ],
+
+            verbose:false,
+
+            experimentalFeatures:{
+              useBarCodeDetectorIfSupported:true
+            }
+          }
+        );
+
+
+      const scanConfig = {
+
+        fps:12,
+
+
+        qrbox:
+          (
+            viewfinderWidth,
+            viewfinderHeight
+          ) => {
+
+            const width =
+              Math.floor(
+                Math.min(
+                  viewfinderWidth *
+                    0.90,
+                  520
+                )
+              );
+
+
+            const height =
+              Math.floor(
+                Math.min(
+                  Math.max(
+                    110,
+                    viewfinderHeight *
+                      0.34
+                  ),
+                  180
+                )
+              );
+
+
+            return {
+              width,
+              height
+            };
+
+          },
+
+
+        aspectRatio:
+          1.7777778,
+
+
+        disableFlip:
+          true
+
+      };
+
+
+      await scanner.start(
+
+        {
+          facingMode:
+            'environment'
+        },
+
+        scanConfig,
+
+        decodedText =>
+          lookup(
+            decodedText
+          ),
+
+        () => {}
+
+      );
+
+
+      scanning =
+        true;
+
+
+      cameraBtn.disabled =
+        true;
+
+
+      stopBtn.disabled =
+        false;
+
+    }
+    catch(err){
+
+      console.error(err);
+
+
+      scannerEmpty.style.display =
+        'flex';
+
+
+      showToast(
+        'Não foi possível abrir a câmera. Verifique a permissão do navegador.'
+      );
+
+
+      try{
+
+        if(scanner)
+          await scanner.clear();
+
+      }
+      catch(_){}
+
+
+      scanner =
+        null;
+
+    }
+
+  }
+
+
+  async function stopScanner(){
+
+    if(!scanner)
+      return;
+
+
+    try{
+
+      if(scanning)
+        await scanner.stop();
+
+
       await scanner.clear();
-    } catch (err) {
+
+    }
+    catch(err){
+
       console.warn(err);
-    } finally {
-      scanner = null;
-      scanning = false;
-      cameraBtn.disabled = false;
-      stopBtn.disabled = true;
-      scannerEmpty.style.display = 'flex';
+
     }
+    finally{
+
+      scanner =
+        null;
+
+
+      scanning =
+        false;
+
+
+      cameraBtn.disabled =
+        false;
+
+
+      stopBtn.disabled =
+        true;
+
+
+      scannerEmpty.style.display =
+        'flex';
+
+    }
+
   }
 
-  function manualLookup() {
-    const value = manualEan.value;
-    lookup(value);
+
+  function manualLookup(){
+
+    const value =
+      manualEan.value;
+
+
+    lookup(
+      value
+    );
+
+
     manualEan.select();
+
   }
 
-  syncBtn.addEventListener('click', () => syncData({ silent: false }));
-  cameraBtn.addEventListener('click', startScanner);
-  stopBtn.addEventListener('click', stopScanner);
-  manualBtn.addEventListener('click', manualLookup);
 
-  manualEan.addEventListener('input', () => {
-    manualEan.value = normalizeEan(manualEan.value).slice(0, 13);
+  syncBtn.addEventListener(
+    'click',
+    () =>
+      syncData({
+        silent:false
+      })
+  );
 
-    // Leitores USB normalmente "digitam" o código.
-    // Quando chegar a 13 dígitos, a busca ocorre sem precisar clicar.
-    if (manualEan.value.length === 13) {
-      const value = manualEan.value;
-      setTimeout(() => {
-        if (manualEan.value === value) manualLookup();
-      }, 40);
+
+  cameraBtn.addEventListener(
+    'click',
+    startScanner
+  );
+
+
+  stopBtn.addEventListener(
+    'click',
+    stopScanner
+  );
+
+
+  manualBtn.addEventListener(
+    'click',
+    manualLookup
+  );
+
+
+  manualEan.addEventListener(
+    'input',
+    () => {
+
+      manualEan.value =
+        normalizeEan(
+          manualEan.value
+        ).slice(
+          0,
+          13
+        );
+
+
+      if(
+        manualEan.value.length ===
+        13
+      ){
+
+        const value =
+          manualEan.value;
+
+
+        setTimeout(
+          () => {
+
+            if(
+              manualEan.value ===
+              value
+            ){
+
+              manualLookup();
+
+            }
+
+          },
+          40
+        );
+
+      }
+
     }
-  });
+  );
 
-  manualEan.addEventListener('keydown', e => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      manualLookup();
-    }
-  });
 
-  window.addEventListener('beforeunload', () => {
-    if (scanner && scanning) {
-      try { scanner.stop(); } catch (_) {}
+  manualEan.addEventListener(
+    'keydown',
+    e => {
+
+      if(
+        e.key ===
+        'Enter'
+      ){
+
+        e.preventDefault();
+
+        manualLookup();
+
+      }
+
     }
-  });
+  );
+
+
+  window.addEventListener(
+    'beforeunload',
+    () => {
+
+      if(
+        scanner &&
+        scanning
+      ){
+
+        try{
+
+          scanner.stop();
+
+        }
+        catch(_){}
+
+      }
+
+    }
+  );
+
 
   bootCache();
+
 })();
+
 </script>
+
 </body>
 </html>
